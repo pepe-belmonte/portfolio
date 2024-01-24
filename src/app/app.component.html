@@ -1,0 +1,12 @@
+<div class="switcher">
+  <label class="dark-mode" for="toggle">
+    <input 
+      class="input" 
+      id="toggle" 
+      type="checkbox"
+      (change)="switchMode()"
+    />
+    <div class="toggle-wrapper"><span class="selector"></span></div>
+  </label>  
+</div>
+<router-outlet />

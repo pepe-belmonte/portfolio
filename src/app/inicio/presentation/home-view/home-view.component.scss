@@ -1,0 +1,119 @@
+.content__panels {
+  display: flex;
+  flex-direction: row;
+}
+
+.side__media {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  -moz-border-radius-topleft: var(--_radius-m);
+       border-top-left-radius: var(--_radius-m);
+  -moz-border-radius-topright: var(--_radius-m);
+       border-top-right-radius: var(--_radius-m);
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .side__media {
+    min-height: 768px;
+    -moz-border-radius-topleft: var(--_radius-l);
+         border-top-left-radius: var(--_radius-l);
+    -moz-border-radius-topright: var(--_radius-l);
+         border-top-right-radius: var(--_radius-l);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .side__media {
+    min-height: 1024px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .side__media {
+    height: 100vh;
+    min-height: 0;
+    -moz-border-radius-topleft: 0;
+         border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+         border-top-right-radius: 0;
+  }
+}
+.side__content {
+  position: relative;
+  width: calc(100% + 1rem);
+  height: 100%;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.side__intro {
+  position: relative;
+  background-color: var(--base);
+  .intro__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .intro__header {
+    margin-top: 2rem;
+    padding: 0 6rem;
+    .intro__subtitle{
+      font: normal 400 1.8rem/1.2 "Inter", sans-serif;
+      color: var(--t-bright);
+      margin-bottom: 0.8rem;
+    }
+  }
+  .intro__content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    .intro__headline {
+      bottom: auto;
+      padding: 0 6rem;
+      width: 100%;
+    }
+    .intro__h1 {
+      font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+      text-transform: uppercase;
+      color: var(--t-bright);
+      line-height: 5rem;
+
+      .colored {
+        font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+        color: var(--accent);
+      }
+    }
+  }
+  .intro__footer {
+    left: 0;
+    width: 100%;
+    padding: 0 6rem;
+    margin-bottom: 0;
+  }
+}
+
+.side__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+// imágenes
+.side-image-1 {
+  background-image: url('../../../../assets/avatars/pepe-wick.jpg');
+}
+.side-image-2 {
+  background-image: url('../../../../assets/avatars/pepe-maverick.jpg');
+}
+
+
+.box {
+  position: absolute;
+}

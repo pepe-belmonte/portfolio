@@ -1,0 +1,70 @@
+.switcher {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  padding: 0.5rem;
+}
+
+$switcherDimensions: 20px; 
+$switcherMargin: 4px;
+$switcherWidth: 60px; 
+$switcherHeight: $switcherDimensions + $switcherMargin + $switcherMargin; 
+
+.dark-mode {
+  pointer-events: none;
+
+  .input {
+    display: none;
+
+    &:checked + .toggle-wrapper {
+      box-shadow: 0 8px 14px 0 rgba(darken(#3957ee, 12%), 0.12);
+    }
+
+    &:checked + .toggle-wrapper > .selector {
+      left: calc(100% - ($switcherDimensions + $switcherMargin));
+      background-color: var(--secondary--light);
+    }
+
+    &:checked ~ .notification > .selected:before {
+      content: 'Yes';
+    }
+  }
+
+  .toggle-wrapper {
+    position: relative;
+    width: $switcherWidth;
+    height: $switcherHeight;
+    background-color: var(--base);
+    border-radius: 999px;
+    margin: auto;
+    cursor: pointer;
+    pointer-events: all;
+
+    .selector {
+      width: $switcherDimensions;
+      height: $switcherDimensions;
+      position: absolute;
+      top: 50%;
+      left: $switcherMargin;
+      transform: translateY(-50%);
+      background-color: var(--t-default);
+      transition: left 0.25s ease;
+      border-radius: 50%;
+    }
+  }
+
+  .notification {
+    font-size: 20px;
+    width: 100%;
+
+    .selected:before {
+      content: 'No';
+      font-size: 20px;
+      border-bottom: 2px solid;
+    }
+  }
+}
