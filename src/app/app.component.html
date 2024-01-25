@@ -1,4 +1,5 @@
 <div class="switcher">
+  <span class="text-mode">{{this.isLightMode?'Light mode':'Dark mode'}}</span>
   <label class="dark-mode" for="toggle">
     <input 
       class="input" 
@@ -7,6 +8,6 @@
       (change)="switchMode()"
     />
     <div class="toggle-wrapper"><span class="selector"></span></div>
-  </label>  
+  </label>
 </div>
 <router-outlet />

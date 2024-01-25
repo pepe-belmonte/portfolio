@@ -7,6 +7,17 @@
 	justify-content: center;
 	align-items: center;
   padding: 0.5rem;
+
+  .mode {
+    font-size: 0.875rem;
+    padding: 0 4px;
+  }
+
+  .text-mode {
+    font-size: 0.875rem;
+    padding: 0 0.5rem;
+    font-weight: 700;
+  }
 }
 
 $switcherDimensions: 20px; 
@@ -21,12 +32,23 @@ $switcherHeight: $switcherDimensions + $switcherMargin + $switcherMargin;
     display: none;
 
     &:checked + .toggle-wrapper {
-      box-shadow: 0 8px 14px 0 rgba(darken(#3957ee, 12%), 0.12);
+      //border: solid 1px black;
+      background: linear-gradient(90deg, rgba(225,225,230,1) 0%, rgba(255,255,255,1) 100%);
     }
 
     &:checked + .toggle-wrapper > .selector {
       left: calc(100% - ($switcherDimensions + $switcherMargin));
-      background-color: var(--secondary--light);
+      &::after {
+        font-family: "Material Symbols Outlined";
+        position: absolute;
+        top: 0;
+        left: -4px;
+        content: "\e518";
+        line-height: 1.2rem;
+        font-size: 1.6rem;
+        color: var(--secondary--light);
+      }
+
     }
 
     &:checked ~ .notification > .selected:before {
@@ -38,12 +60,13 @@ $switcherHeight: $switcherDimensions + $switcherMargin + $switcherMargin;
     position: relative;
     width: $switcherWidth;
     height: $switcherHeight;
-    background-color: var(--base);
+    background: linear-gradient(90deg, rgba(9,5,22,1) 0%, rgba(82,82,82,1) 100%);
+    transition: all 0.25s ease;
     border-radius: 999px;
     margin: auto;
     cursor: pointer;
     pointer-events: all;
-
+    //border: solid 1px white;
     .selector {
       width: $switcherDimensions;
       height: $switcherDimensions;
@@ -51,9 +74,22 @@ $switcherHeight: $switcherDimensions + $switcherMargin + $switcherMargin;
       top: 50%;
       left: $switcherMargin;
       transform: translateY(-50%);
-      background-color: var(--t-default);
       transition: left 0.25s ease;
       border-radius: 50%;
+      font-family: "Material Symbols Outlined";
+      content: "\e51c";
+      line-height: 1.2rem;
+      font-size: 1.6rem;      
+      &::after {
+        font-family: "Material Symbols Outlined";
+        position: absolute;
+        top: 0;
+        left: -3px;
+        content: "\e51c";
+        line-height: 1.2rem;
+        font-size: 1.6rem;
+        color: var(--t-default);
+      }
     }
   }
 

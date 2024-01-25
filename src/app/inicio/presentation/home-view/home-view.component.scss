@@ -55,8 +55,8 @@
     overflow: hidden;
   }
   .intro__header {
-    margin-top: 2rem;
-    padding: 0 6rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
     .intro__subtitle{
       font: normal 400 1.8rem/1.2 "Inter", sans-serif;
       color: var(--t-bright);
@@ -70,17 +70,17 @@
     align-items: center;
     .intro__headline {
       bottom: auto;
-      padding: 0 6rem;
+      padding: 0 1rem;
       width: 100%;
     }
     .intro__h1 {
-      font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+      font: normal 500 2.6rem/1.08 "Oswald", sans-serif;
       text-transform: uppercase;
       color: var(--t-bright);
-      line-height: 5rem;
+      line-height: 4rem;
 
       .colored {
-        font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+        font: normal 500 2.6rem/1.08 "Oswald", sans-serif;
         color: var(--accent);
       }
     }
@@ -88,10 +88,37 @@
   .intro__footer {
     left: 0;
     width: 100%;
-    padding: 0 6rem;
+    padding: 0 2rem;
     margin-bottom: 0;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .side__intro {
+    .intro__header {
+      margin-top: 2rem;
+      padding: 0 6rem;
+    }
+    .intro__content {
+      .intro__headline {
+        padding: 0 6rem;
+      }
+      .intro__h1 {
+        font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+        line-height: 5rem;
+  
+        .colored {
+          font: normal 500 3.6rem/1.08 "Oswald", sans-serif;
+        }
+      }
+    }
+    .intro__footer {
+      padding: 0 6rem;
+    }
+  }
+  
+}
+
 
 .side__image {
   position: absolute;
@@ -106,10 +133,10 @@
 }
 
 // imágenes
-.side-image-1 {
+.side-image-0 {
   background-image: url('../../../../assets/avatars/pepe-wick.jpg');
 }
-.side-image-2 {
+.side-image-1 {
   background-image: url('../../../../assets/avatars/pepe-maverick.jpg');
 }
 
